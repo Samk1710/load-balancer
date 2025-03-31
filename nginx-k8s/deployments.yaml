@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pod-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-webapp
+  template:
+    metadata:
+      labels:
+        app: my-webapp
+        version: a
+    spec:
+      containers:
+      - name: nginx
+        image: nginx-pod-a
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pod-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-webapp
+  template:
+    metadata:
+      labels:
+        app: my-webapp
+        version: b
+    spec:
+      containers:
+      - name: nginx
+        image: nginx-pod-b
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-pod-c
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-webapp
+  template:
+    metadata:
+      labels:
+        app: my-webapp
+        version: c
+    spec:
+      containers:
+      - name: nginx
+        image: nginx-pod-c
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 80
