@@ -1,6 +1,6 @@
-##LOAD BALANCER
+LOAD BALANCER
 
-#Quickstart
+Quickstart
 git clone https://github.com/Samk1710/load-balancer
 cd load-balancer/nginx-k8s
 
